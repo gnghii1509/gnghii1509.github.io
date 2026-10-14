@@ -1,208 +1,38 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Phan Ngọc Thanh Thảo 💙</title>
+<title>Thư tềnh củm =)))</title>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Caveat:wght@600&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-  background: #020412;
-  overflow: hidden;
-  height: 100vh;
-  font-family: Arial, sans-serif;
-}
-
-canvas {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.message {
-  position: absolute;
-  top: 46%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #d9edff;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 0 0 8px #56aaff,
-               0 0 20px #1479ff;
-  pointer-events: none;
-  animation: glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-  from { opacity: .6; }
-  to { opacity: 1; text-shadow: 0 0 25px #66baff; }
-}
-
-.footer {
-  position: absolute;
-  bottom: 25px;
-  width: 100%;
-  text-align: center;
-  color: #8fa9d5;
-  font-size: 13px;
-  font-style: italic;
-}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;overflow-x:hidden;background:radial-gradient(circle at 50% 25%,#ffe9ef,#f7bdcc 75%);color:#753b4e;font-family:Georgia,serif}.scene{text-align:center;width:min(95vw,600px);padding:35px 0 60px;position:relative;z-index:1}h1{font-family:'Alex Brush',cursive;font-size:clamp(35px,7vw,55px);margin:0}.subtitle{font-size:21px;margin:4px 0 35px}.envelope{width:min(85vw,360px);height:240px;position:relative;margin:70px auto 20px;cursor:pointer;filter:drop-shadow(0 16px 18px #ad61714d);transition:transform .5s}.envelope:hover{transform:translateY(-5px)}.back{position:absolute;inset:0;background:#df8fa4;border-radius:8px}.front{position:absolute;inset:0;clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);background:#f6b5c5;z-index:4;border-radius:6px}.front:after{content:'';position:absolute;inset:0;background:#f4a7bc;clip-path:polygon(0 100%,50% 38%,100% 100%)}.top{position:absolute;top:0;left:0;width:100%;height:65%;background:#f9c5d1;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .7s;z-index:6}.seal{position:absolute;top:100px;left:50%;transform:translateX(-50%);width:55px;height:55px;border-radius:50%;background:#b94367;color:#fff;display:grid;place-items:center;font-size:29px;z-index:7;box-shadow:0 4px 9px #9e3d6170;transition:opacity .3s}.envelope.open .top{transform:rotateX(180deg);z-index:1}.envelope.open .seal{opacity:0;pointer-events:none}.envelope.open{pointer-events:none}.hint{font-style:italic;font-size:19px}.letter{display:none;position:relative;background:#fffaf5;border:1px solid #efcbd0;box-shadow:0 20px 60px #9f546044;border-radius:12px;width:min(92vw,510px);min-height:370px;margin:20px auto;padding:28px 28px 20px;text-align:left;animation:rise .65s ease both}.letter.visible{display:block}@keyframes rise{from{opacity:0;transform:translateY(40px) scale(.92)}to{opacity:1;transform:translateY(0) scale(1)}}.letter-top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ebc8cc;padding-bottom:12px;color:#ad6276}.heart{color:#c75072}.page{display:none;min-height:215px;padding:20px 4px}.page.active{display:block;animation:fade .35s}@keyframes fade{from{opacity:0}to{opacity:1}}.salutation{font-family:'Alex Brush',cursive;font-size:40px;margin:0 0 14px}.letter p{font-family:'Cormorant Garamond',serif;font-size:26px;line-height:1.5;margin:12px 0}.signature{text-align:right;margin-top:24px}.signature strong{display:block;font-family:'Alex Brush',cursive;font-size:35px;color:#b34d6b}.controls{display:flex;justify-content:space-between;gap:8px;border-top:1px solid #ebc8cc;padding-top:17px}button{cursor:pointer;border:0;border-radius:20px;padding:10px 15px;background:#f4d8df;color:#8d425c;font-weight:600}button.primary{background:#bf5575;color:white}button:disabled{opacity:.35;cursor:default}.gallery{display:none;margin:22px auto;width:min(90vw,450px);background:#fff7f8;padding:15px;border-radius:12px;box-shadow:0 10px 28px #ad61713a}.gallery.visible{display:block}.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.photos img{width:100%;aspect-ratio:3/4;object-fit:cover;background:#f0d1d8;border-radius:5px}.gallery h2{font-family:'Caveat',cursive;font-size:28px;margin:0 0 12px}.gallery small{display:block;margin-top:10px}.sparkle{position:fixed;top:-30px;pointer-events:none;animation:fall linear forwards;color:#c85d80;z-index:0}@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}.hidden{display:none!important}@media(max-width:420px){.letter{padding:20px 16px}.letter p{font-size:23px}.controls button{padding:9px 10px}}
 </style>
 </head>
 <body>
-
-<canvas id="canvas"></canvas>
-<div class="message">Phan Ngọc Thanh Thảo</div>
-<div class="footer">Nhấn vào màn hình ii có trái tim bay phấp phới ó cậu =))) 💙</div>
-
+<main class="scene">
+<header id="heading"><h1>Ta có bức thư tặng nàng</h1><div class="subtitle">Nhớ đọc cho hết nhé</div></header>
+<div id="envelope" class="envelope" role="button" tabindex="0" aria-label="Mở thư">
+<div class="back"></div><div class="top"></div><div class="front"></div><div class="seal">♥</div>
+</div>
+<div id="hint" class="hint">Chạm trái tim để mở thư ♡</div>
+<section id="letter" class="letter" aria-label="Bức thư">
+<div class="letter-top"><span class="heart">♥ ─── ♥</span><span id="counter">Page 1 of 3</span><button id="topClose" aria-label="Đóng thư">✕</button></div>
+<article class="page active"><h2 class="salutation">Cục dàng ơi,</h2><p>Anh đi cầm điện thoại nhé =))</p><p>Hong có bỏ cục dàng âu</p></article>
+<article class="page"><p>Yeuu lam oo</p></article>
+<article class="page"><p>Bái baii =))</p><div class="signature"><span>14/10/2026</span><p>Gia Nghi ký tên =))</p><strong>Thanh Thao ❤️</strong></div></article>
+<div class="controls"><button id="prev" disabled>← Previous</button><button id="close">✉ Close</button><button id="next" class="primary">Next Page →</button></div>
+</section>
+<section id="gallery" class="gallery"><h2>✦ OUR MEMORIES ✦</h2><div class="photos"><img src="photo1.jpg" alt="our favorite view"><img src="photo2.jpg" alt="laughing with you"><img src="photo3.jpg" alt="forever and always"></div><small>LIFE 4 CUTS • FEB 14 • 11:11 PM</small></section>
+<button id="toggleGallery" class="hidden">📷 Xem ảnh kỷ niệm</button>
+</main>
 <script>
-const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
-
-let W, H, particles = [], stars = [];
-let time = 0;
-
-function resize() {
-  W = canvas.width = window.innerWidth;
-  H = canvas.height = window.innerHeight;
-  createHeart();
-  createStars();
-}
-
-function heart(t) {
-  return {
-    x: 16 * Math.pow(Math.sin(t), 3),
-    y: -(13 * Math.cos(t)
-      - 5 * Math.cos(2*t)
-      - 2 * Math.cos(3*t)
-      - Math.cos(4*t))
-  };
-}
-
-class Particle {
-  constructor(x, y, targetX, targetY) {
-    this.x = x;
-    this.y = y;
-    this.tx = targetX;
-    this.ty = targetY;
-    this.size = Math.random() * 2.5 + .6;
-    this.speed = Math.random() * .025 + .012;
-    this.phase = Math.random() * Math.PI * 2;
-    this.color = Math.random() > .2
-      ? "80,160,255" : "190,210,255";
-  }
-
-  update() {
-    this.x += (this.tx - this.x) * this.speed;
-    this.y += (this.ty - this.y) * this.speed;
-  }
-
-  draw() {
-    let glow = .45 + .55 *
-      Math.abs(Math.sin(time * .025 + this.phase));
-
-    ctx.beginPath();
-    ctx.fillStyle = `rgba(${this.color},${glow})`;
-    ctx.shadowBlur = 15;
-    ctx.shadowColor = "#258cff";
-    ctx.arc(this.x, this.y, this.size, 0, Math.PI*2);
-    ctx.fill();
-    ctx.shadowBlur = 0;
-  }
-}
-
-function createHeart() {
-  particles = [];
-  const scale = Math.min(W / 45, H / 42, 13);
-  const cx = W / 2;
-  const cy = H * .44;
-
-  for (let i = 0; i < 220; i++) {
-    let t = Math.random() * Math.PI * 2;
-    let p = heart(t);
-    let scatter = .88 + Math.random() * .24;
-
-    let x = cx + p.x * scale * scatter;
-    let y = cy + p.y * scale * scatter;
-
-    particles.push(new Particle(
-      Math.random() * W,
-      Math.random() * H,
-      x, y
-    ));
-  }
-}
-
-function createStars() {
-  stars = [];
-  for (let i = 0; i < 90; i++) {
-    stars.push({
-      x: Math.random() * W,
-      y: Math.random() * H,
-      r: Math.random() * 1.7 + .3,
-      phase: Math.random() * 10
-    });
-  }
-}
-
-function animate() {
-  ctx.fillStyle = "rgba(2,4,18,0.25)";
-  ctx.fillRect(0, 0, W, H);
-  time++;
-
-  for (let s of stars) {
-    let a = .2 + .6 *
-      Math.abs(Math.sin(time * .01 + s.phase));
-
-    ctx.beginPath();
-    ctx.fillStyle = `rgba(75,150,255,${a})`;
-    ctx.shadowBlur = 10;
-    ctx.shadowColor = "#1976ff";
-    ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
-    ctx.fill();
-  }
-
-  const pulse = 1 + Math.sin(time * .035) * .025;
-  const cx = W / 2, cy = H * .44;
-
-  for (let p of particles) {
-    p.update();
-
-    ctx.save();
-    ctx.translate(cx, cy);
-    ctx.scale(pulse, pulse);
-    ctx.translate(-cx, -cy);
-    p.draw();
-    ctx.restore();
-  }
-
-  ctx.shadowBlur = 0;
-  requestAnimationFrame(animate);
-}
-
-canvas.addEventListener("click", e => {
-  for (let i = 0; i < 35; i++) {
-    const t = Math.random() * Math.PI * 2;
-    const p = heart(t);
-    const scale = Math.min(W/45, H/42, 13);
-
-    particles.push(new Particle(
-      e.clientX, e.clientY,
-      W/2 + p.x*scale,
-      H*.44 + p.y*scale
-    ));
-  }
-
-  if (particles.length > 450)
-    particles.splice(0, 35);
-});
-
-window.addEventListener("resize", resize);
-resize();
-animate();
+const envelope=document.getElementById('envelope'),letter=document.getElementById('letter'),pages=[...document.querySelectorAll('.page')],counter=document.getElementById('counter'),prev=document.getElementById('prev'),next=document.getElementById('next'),hint=document.getElementById('hint'),gallery=document.getElementById('gallery'),toggleGallery=document.getElementById('toggleGallery');let current=0,opening=false;
+function showPage(n){current=Math.max(0,Math.min(2,n));pages.forEach((p,i)=>p.classList.toggle('active',i===current));counter.textContent=`Page ${current+1} of 3`;prev.disabled=current===0;next.textContent=current===2?'Đọc lại ↺':'Next Page →';}
+function openLetter(){if(opening||letter.classList.contains('visible'))return;opening=true;envelope.classList.add('open');hint.classList.add('hidden');setTimeout(()=>{envelope.classList.add('hidden');letter.classList.add('visible');toggleGallery.classList.remove('hidden');opening=false;},650)}
+function closeLetter(){letter.classList.remove('visible');gallery.classList.remove('visible');toggleGallery.classList.add('hidden');envelope.classList.remove('hidden');envelope.classList.remove('open');hint.classList.remove('hidden');showPage(0)}
+envelope.addEventListener('click',openLetter);envelope.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openLetter()}});prev.onclick=()=>showPage(current-1);next.onclick=()=>showPage(current===2?0:current+1);document.getElementById('close').onclick=closeLetter;document.getElementById('topClose').onclick=closeLetter;toggleGallery.onclick=()=>{gallery.classList.toggle('visible');toggleGallery.textContent=gallery.classList.contains('visible')?'Ẩn ảnh kỷ niệm':'📷 Xem ảnh kỷ niệm'};
+setInterval(()=>{if(document.hidden)return;const el=document.createElement('span');el.className='sparkle';el.textContent=Math.random()>.5?'♥':'✦';el.style.left=Math.random()*100+'vw';el.style.fontSize=10+Math.random()*16+'px';el.style.animationDuration=5+Math.random()*6+'s';document.body.appendChild(el);setTimeout(()=>el.remove(),11000)},500);
 </script>
 </body>
 </html>
